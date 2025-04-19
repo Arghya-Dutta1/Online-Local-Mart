@@ -9,7 +9,7 @@ dotenv.config();
 const connectDB=require('./db');
 connectDB();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
