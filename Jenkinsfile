@@ -52,7 +52,7 @@ pipeline {
 
         stage('Start Containers') {
             steps {
-                dir("%PROJECT_NAME%") {
+                dir("${PROJECT_NAME}") {
                     bat 'docker-compose up -d'
                 }
             }
