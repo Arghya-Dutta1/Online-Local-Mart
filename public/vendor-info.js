@@ -1,32 +1,32 @@
 // vendor-info.js
 
 // DOM Elements
-const vendorNameElement = document.getElementById('vendorName');
-const vendorInfoElement = document.getElementById('vendorInfo');
-const itemsContainer = document.getElementById('row');
-const loadingElement = document.createElement('div');
-loadingElement.className = 'loading';
+const vendorNameElement = document.getElementById("vendorName");
+const vendorInfoElement = document.getElementById("vendorInfo");
+const itemsContainer = document.getElementById("row");
+const loadingElement = document.createElement("div");
+loadingElement.className = "loading";
 loadingElement.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Loading...';
 
 // Create error message element
 const createErrorMessage = (message) => {
-    const errorDiv = document.createElement('div');
-    errorDiv.className = 'error';
-    errorDiv.innerHTML = `
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "error";
+  errorDiv.innerHTML = `
         <i class="fa fa-exclamation-circle"></i>
         <p>${message}</p>
         <button onclick="location.reload()" class="btn btn-outline-danger">Try Again</button>
     `;
-    return errorDiv;
+  return errorDiv;
 };
 
 const createItemCard = (item) => {
-  const itemCard = document.createElement('div');
+  const itemCard = document.createElement("div");
   itemCard.classList.add("card-wrapper");
-  
+
   itemCard.innerHTML = `
       <div class="col1 card">
-          <div class="prodimg">
+          <div class="prodimg" onclick="window.location.href='product-info.html?id=${item._id}'" style="cursor: pointer;">
               <img src="${item.image_url}" alt="${item.name}" 
                    onerror="this.src='placeholder-image.jpg'">
           </div>
@@ -40,77 +40,77 @@ const createItemCard = (item) => {
           </div>
       </div>
   `;
-  
   return itemCard;
 };
 
 // Add to cart function (placeholder)
 const addToCart = (itemId) => {
-    console.log(`Adding item ${itemId} to cart`);
-    // Implement cart functionality
+  console.log(`Adding item ${itemId} to cart`);
+  // Implement cart functionality
 };
 
 // Load vendor data
 const loadVendorData = async () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const vendorId = urlParams.get('id');
+  const urlParams = new URLSearchParams(window.location.search);
+  const vendorId = urlParams.get("id");
 
-    if (!vendorId) {
-        itemsContainer.appendChild(
-            createErrorMessage('No vendor ID provided. Please try again.')
-        );
-        return;
+  if (!vendorId) {
+    itemsContainer.appendChild(
+      createErrorMessage("No vendor ID provided. Please try again.")
+    );
+    return;
+  }
+
+  try {
+    // Show loading state
+    itemsContainer.appendChild(loadingElement);
+
+    const response = await fetch(`/vendor/${vendorId}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    try {
-        // Show loading state
-        itemsContainer.appendChild(loadingElement);
+    const vendor = await response.json();
 
-        const response = await fetch(`/vendor/${vendorId}`);
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const vendor = await response.json();
+    // Update vendor information
+    vendorNameElement.textContent = vendor.name;
+    vendorInfoElement.textContent = vendor.information;
 
-        // Update vendor information
-        vendorNameElement.textContent = vendor.name;
-        vendorInfoElement.textContent = vendor.information;
+    // Clear loading state
+    itemsContainer.innerHTML = "";
 
-        // Clear loading state
-        itemsContainer.innerHTML = '';
-
-        // Check if vendor has items
-        if (!vendor.items || vendor.items.length === 0) {
-            itemsContainer.innerHTML = `
+    // Check if vendor has items
+    if (!vendor.items || vendor.items.length === 0) {
+      itemsContainer.innerHTML = `
                 <div class="no-items">
                     <i class="fa fa-info-circle"></i>
                     <p>No items available from this vendor yet.</p>
                 </div>
             `;
-            return;
-        }
-
-        // Create and append item cards
-        vendor.items.forEach(item => {
-            const itemCard = createItemCard(item);
-            itemsContainer.appendChild(itemCard);
-        });
-
-        // Add animation to cards
-        const cards = document.querySelectorAll('.col1.card');
-        cards.forEach((card, index) => {
-            card.style.animation = `fadeIn 0.5s ease forwards ${index * 0.1}s`;
-        });
-
-    } catch (error) {
-        console.error('Error loading vendor data:', error);
-        itemsContainer.innerHTML = '';
-        itemsContainer.appendChild(
-            createErrorMessage('Failed to load vendor information. Please try again later.')
-        );
+      return;
     }
+
+    // Create and append item cards
+    vendor.items.forEach((item) => {
+      const itemCard = createItemCard(item);
+      itemsContainer.appendChild(itemCard);
+    });
+
+    // Add animation to cards
+    const cards = document.querySelectorAll(".col1.card");
+    cards.forEach((card, index) => {
+      card.style.animation = `fadeIn 0.5s ease forwards ${index * 0.1}s`;
+    });
+  } catch (error) {
+    console.error("Error loading vendor data:", error);
+    itemsContainer.innerHTML = "";
+    itemsContainer.appendChild(
+      createErrorMessage(
+        "Failed to load vendor information. Please try again later."
+      )
+    );
+  }
 };
 
 // Add CSS styles
@@ -221,4 +221,4 @@ styleSheet.textContent = styles;
 document.head.appendChild(styleSheet);
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', loadVendorData);
+document.addEventListener("DOMContentLoaded", loadVendorData);

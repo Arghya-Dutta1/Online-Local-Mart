@@ -9,9 +9,6 @@ fetch('/vendors')
     // Loop through each vendor and create a card for them
     vendors.forEach(vendor => {
       
-      
-      
-      
       let vendorCard = document.createElement('div');
       vendorCard.classList.add('card');
 

@@ -28,7 +28,7 @@ nav ul li a:hover {
 /* Login Page Styles */
 .login-container {
     flex: 1;
-    background: linear-gradient(145deg, #e79b58, #e17933);
+    background: linear-gradient(145deg, #f1c876, #e17933);
     padding: 40px 0;
 }
 

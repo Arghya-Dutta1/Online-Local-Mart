@@ -173,8 +173,11 @@ nav ul li a:hover {
     color: #666;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    justify-content: center;
+    text-align: center;
 }
 
 /* Category-specific colors */
