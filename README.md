@@ -8,7 +8,7 @@ Vendor registration<br>
 Vendor Login<br>
 Add Products by linking image url<br>
 Product listing and browsing <br>
-Seperate Vendor and Product Page<br>
+Seperate Vendor and Product Page <br>
 
 ## Technologies Used
 
