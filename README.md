@@ -8,7 +8,7 @@ Vendor registration<br>
 Vendor Login<br>
 Add Products by linking image url<br>
 Product listing and browsing <br>
-Seperate Vendor Page<br>
+Seperate Vendor and Product Page<br>
 
 ## Technologies Used
 
@@ -18,6 +18,8 @@ MongoDB<br>
 HTML<br>
 CSS<br>
 JavaScript<br>
+Docker<br>
+Jenkins<br>
 
 ## Installation Instructions
 
