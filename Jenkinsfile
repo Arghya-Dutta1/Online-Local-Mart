@@ -23,7 +23,7 @@ pipeline {
 
         stage('Build Docker Images') {
             steps {
-                dir("%PROJECT_NAME%") {
+                dir("${PROJECT_NAME}") {
                     bat 'docker-compose build'
                 }
             }
