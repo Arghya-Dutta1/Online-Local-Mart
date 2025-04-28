@@ -23,11 +23,14 @@ pipeline {
 
         stage('Build Docker Images') {
             steps {
-                dir("${PROJECT_NAME}") {
-                    bat 'docker-compose build'
+                timeout(time: 10, unit: 'MINUTES') {
+                    dir("${PROJECT_NAME}") {
+                        bat 'docker-compose build'
+                    }
                 }
             }
         }
+
 
         stage('Tag Docker Image') {
             steps {
