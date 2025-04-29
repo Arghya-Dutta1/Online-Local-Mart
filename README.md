@@ -75,28 +75,61 @@ In the root of your project, create a `Jenkinsfile` to define the CI/CD pipeline
     pipeline {
         agent any
         stages {
-            stage('Install Dependencies') {
-                steps {
-                    script {
-                        sh 'npm install'
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+
+        stage('Clone Repository') {
+            steps {
+                bat "git clone %REPO_URL%"
+            }
+        }
+
+        stage('Build Docker Images') {
+            steps {
+                timeout(time: 10, unit: 'MINUTES') {
+                    dir("${PROJECT_NAME}") {
+                        bat 'docker-compose build'
                     }
                 }
             }
-            stage('Run Tests') {
-                steps {
-                    script {
-                        sh 'npm test'
-                    }
+        }
+
+
+        stage('Tag Docker Image') {
+            steps {
+                bat 'docker tag online-local-mart-backend %IMAGE_NAME%'
+            }
+        }
+
+        stage('Login to DockerHub') {
+            steps {
+                bat "echo %DOCKERHUB_CREDENTIALS_PSW% | docker login -u %DOCKERHUB_CREDENTIALS_USR% --password-stdin"
+            }
+        }
+
+        stage('Push to DockerHub') {
+            steps {
+                bat 'docker push %IMAGE_NAME%'
+            }
+        }
+
+        stage('Start Containers') {
+            steps {
+                dir("${PROJECT_NAME}") {
+                    bat 'docker-compose up -d'
                 }
             }
-            stage('Build and Deploy') {
-                steps {
-                    script {
-                        sh 'npm run build'
-                        sh 'npm run deploy'
-                    }
-                }
+        }
+
+        stage('Verify Running Containers') {
+            steps {
+                bat 'docker ps -a'
             }
+        }
+    }
         }
     }
 ```
