@@ -179,20 +179,27 @@ You can also run this project using **Docker**.
 ## 📸 Screenshots
 
 ### 🖥️ Home Page
-![Home Page](https://github.com/YourUsername/Local-Mart/assets/homepage.png)  
+![Home Page](https://github.com/user-attachments/assets/6a7cd53b-730c-4f24-86a5-2ff9c9a2d4f1)
+![image](https://github.com/user-attachments/assets/8b6abdd6-274a-48e9-b5e0-6ae990065656)
+
+
 The homepage displays a list of products from various local vendors.
 
 ### 🧾 Vendor Registration
-![Vendor Registration](https://github.com/YourUsername/Local-Mart/assets/vendor-registration.png)  
+![image](https://github.com/user-attachments/assets/d4d4abd4-ca22-4f90-87b8-1256ab5f8334)
 Page for new vendors to register and get started with selling products.
 
 ### 🛍️ Product Listing Page
-![Product Listing](https://github.com/YourUsername/Local-Mart/assets/product-listing.png)  
+![image](https://github.com/user-attachments/assets/d6a2a0a4-714e-48c5-bc5f-80826228ea37)
 A list of products with images, prices, and vendor details.
 
 ### 👤 Vendor Profile Page
-![Vendor Page](https://github.com/YourUsername/Local-Mart/assets/vendor-profile.png)  
+![image](https://github.com/user-attachments/assets/728c1a35-950c-4698-b561-ed7695972fe3)
 A dedicated page showing all products listed by a specific vendor.
+
+### 🛍️ Product Page
+![image](https://github.com/user-attachments/assets/9e1d3a93-90ca-4f9b-8434-554b9a9e6555)
+A dedicated page showing product details.
 
 ---
 
