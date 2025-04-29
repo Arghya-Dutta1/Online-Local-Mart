@@ -41,14 +41,12 @@ Customers can conveniently browse a variety of local goods and support community
 ## 📦 Installation
 
 1️⃣ **Clone the repository:**
-    ```console
+
     git clone https://github.com/YourUsername/Local-Mart.git
-    ```
 
 2️⃣ **Navigate to the project directory:**
-    ```bash
+
     cd Local-Mart
-    ```
 
 3️⃣ **Install server-side dependencies:**
 
@@ -58,7 +56,7 @@ Customers can conveniently browse a variety of local goods and support community
 
     npm start
 
-> The server will typically run on `http://localhost:5000` unless otherwise configured.
+> The server will typically run on `http://localhost:3000` unless otherwise configured.
 
 ---
 
@@ -73,7 +71,7 @@ Ensure Jenkins is installed on your machine, and you have the necessary plugins 
 
 2️⃣ **Set up a Jenkinsfile**  
 In the root of your project, create a `Jenkinsfile` to define the CI/CD pipeline. Example:
-
+```groovy
     pipeline {
         agent any
         stages {
@@ -101,6 +99,7 @@ In the root of your project, create a `Jenkinsfile` to define the CI/CD pipeline
             }
         }
     }
+```
 
 3️⃣ **Run the Jenkins pipeline**  
 After configuring your Jenkins pipeline, trigger the build process either manually or automatically on code changes.
