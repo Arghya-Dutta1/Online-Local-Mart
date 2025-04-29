@@ -143,3 +143,67 @@ You can also run this project using **Docker**.
 
 ---
 
+## 📸 Screenshots
+
+### 🖥️ Home Page
+![Home Page](https://github.com/YourUsername/Local-Mart/assets/homepage.png)  
+The homepage displays a list of products from various local vendors.
+
+### 🧾 Vendor Registration
+![Vendor Registration](https://github.com/YourUsername/Local-Mart/assets/vendor-registration.png)  
+Page for new vendors to register and get started with selling products.
+
+### 🛍️ Product Listing Page
+![Product Listing](https://github.com/YourUsername/Local-Mart/assets/product-listing.png)  
+A list of products with images, prices, and vendor details.
+
+### 👤 Vendor Profile Page
+![Vendor Page](https://github.com/YourUsername/Local-Mart/assets/vendor-profile.png)  
+A dedicated page showing all products listed by a specific vendor.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy  
+of this software and associated documentation files (the "Software"), to deal  
+in the Software without restriction, including without limitation the rights  
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
+copies of the Software, and to permit persons to whom the Software is  
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all  
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,  
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
+SOFTWARE.
+
+For more details, please refer to the [LICENSE](LICENSE) file in this repository.
+
+---
+
+## 👨‍💻 Author
+
+**Arghya Dutta**  
+GitHub: [@Arghya-Dutta1](https://github.com/Arghya-Dutta1)  
+
+---
+
+## 🙏 Acknowledgments
+
+- 📚 [Node.js Documentation](https://nodejs.org/en/docs)  
+- 🚂 [Express.js Docs](https://expressjs.com/)  
+- 🍃 [MongoDB Docs](https://www.mongodb.com/docs/)  
+- 🐳 [Docker Documentation](https://docs.docker.com/)  
+- 🤖 [Jenkins Documentation](https://www.jenkins.io/doc/)  
+- 💻 [MDN Web Docs - HTML/CSS/JS](https://developer.mozilla.org/en-US/)
+
+Made with ❤️ by Arghya
+
