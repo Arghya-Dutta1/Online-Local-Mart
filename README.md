@@ -1,5 +1,5 @@
 # 🛒 Local Mart
-**Local Mart** is an online marketplace platform designed to connect local vendors with customers.  
+**Local Mart** is an online marketplace platform designed to connect local vendors with customers..  
 It increases the visibility of local businesses by registering vendors on the website and listing their products online.  
 Customers can conveniently browse a variety of local goods and support community businesses.
 
